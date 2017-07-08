@@ -52,15 +52,10 @@ apt-file update
 vnstat -u -i venet0
 service vnstat restart
 
-# install boxes
-cd
-apt-get install boxes
-echo "clear" >> .profile
-echo "boxes" >> .profile
-
 # instal ruby dan lolcat
 cd
-apt-get ruby
+apt-get install ruby
+y
 gem install lolcat
 
 # install webserver
@@ -164,7 +159,7 @@ wget -O disable-user-expire "https://raw.githubusercontent.com/DG-Network/script
 wget -O dropmon "https://raw.githubusercontent.com/DG-Network/script/master/dropmon.sh"
 wget -O unbanned-user "https://raw.githubusercontent.com/DG-Network/script/master/unbanned-user.sh"
 wget -O user-active-list "https://raw.githubusercontent.com/DG-Network/script/master/user-active-list.sh"
-wget -O user--add "https://raw.githubusercontent.com/DG-Network/script/master/user-add.sh"
+wget -O user-add "https://raw.githubusercontent.com/DG-Network/script/master/user-add.sh"
 wget -O user-del "https://raw.githubusercontent.com/DG-Network/script/master/user-del.sh"
 wget -O trial "https://raw.githubusercontent.com/DG-Network/script/master/trial.sh"
 wget "https://raw.githubusercontent.com/DG-Network/script/master/userlimit.sh"
