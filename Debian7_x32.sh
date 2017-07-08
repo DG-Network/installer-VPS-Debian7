@@ -172,7 +172,7 @@ wget -O unbanned-user "https://raw.githubusercontent.com/DG-Network/script/maste
 wget -O user-active-list "https://raw.githubusercontent.com/DG-Network/script/master/user-active-list.sh"
 wget -O user-add "https://raw.githubusercontent.com/DG-Network/script/master/user-add.sh"
 wget -O user-del "https://raw.githubusercontent.com/DG-Network/script/master/user-del.sh"
-wget -O trial "https://raw.githubusercontent.com/DG-Network/script/master/trial.sh"
+wget -O trial "https://raw.githubusercontent.com/DG-Network/script/master/user-gen.sh"
 wget "https://raw.githubusercontent.com/DG-Network/script/master/userlimit.sh"
 wget -O user-list "https://raw.githubusercontent.com/DG-Network/script/master/user-list.sh"
 wget -O user-login "https://raw.githubusercontent.com/DG-Network/script/master/user-login.sh"
