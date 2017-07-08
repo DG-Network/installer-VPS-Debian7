@@ -149,11 +149,6 @@ apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtim
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb
 dpkg --install webmin_1.831_all.deb
 rm webmin_1.831_all.deb
-else
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
-rpm -i webmin-1.831-1.noarch.rpm;
-rm webmin-1.831-1.noarch.rpm
 fi
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 chattr +i /etc/webmin/miniserv.conf
