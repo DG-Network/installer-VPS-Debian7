@@ -146,16 +146,12 @@ service squid3 restart
 # install webmin
 cd
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python -y
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb
-dpkg --install webmin_1.831_all.deb
-rm webmin_1.831_all.deb
-fi
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-chattr +i /etc/webmin/miniserv.conf
-wget -O /usr/local/bin/trial "http://trinetis.or.id/trial.txt"
-chmod +x /usr/local/bin/trial
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.670_all.deb"
+dpkg --install webmin_1.670_all.deb;
+apt-get -y -f install;
+rm /root/webmin_1.670_all.deb
 service webmin restart
-chkconfig webmin on
+service vnstat restart
 
 # downlaod script
 cd /usr/bin
