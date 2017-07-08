@@ -211,8 +211,10 @@ cd
 rm .bashrc
 rm .profile
 wget -O .bashrc "https://raw.githubusercontent.com/DG-Network/screen/master/bashrc"
-wget "https://raw.githubusercontent.com/DG-Network/screen/master/dg-network"
-wget -O /etc/pesan-server "https://raw.githubusercontent.com/DG-Network/script/master/pesan--server"
+wget https://raw.githubusercontent.com/DG-Network/screen/master/dg-network
+cd /etc
+wget https://raw.githubusercontent.com/DG-Network/script/master/pesan--server
+cd
 wget -O .profile "https://raw.githubusercontent.com/DG-Network/screen/master/profile"
 chmod +x .profile
 
@@ -263,7 +265,6 @@ echo "Daftar Akun dan Expired"  | tee -a log-install.txt
 echo "Hapus Akun"  | tee -a log-install.txt
 echo "Monitoring Akun dan Tendang"  | tee -a log-install.txt
 echo "Dan masih banyak lagi script PREMIUM nya"  | tee -a log-install.txt
-echo "./bench-network.sh"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
