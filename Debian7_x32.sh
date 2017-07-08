@@ -150,7 +150,6 @@ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb
 dpkg --install webmin_1.831_all.deb
 rm webmin_1.831_all.deb
 else
-yum remove webmin -y
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
 wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
 rpm -i webmin-1.831-1.noarch.rpm;
