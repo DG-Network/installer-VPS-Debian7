@@ -146,10 +146,12 @@ service squid3 restart
 # install webmin
 cd
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python -y
-wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.670_all.deb"
-dpkg --install webmin_1.670_all.deb;
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.680_all.deb"
+dpkg --install webmin_1.680_all.deb;
 apt-get -y -f install;
-rm /root/webmin_1.670_all.deb
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+chattr +i /etc/webmin/miniserv.conf
+rm /root/webmin_1.680_all.deb
 service webmin restart
 service vnstat restart
 
@@ -201,9 +203,12 @@ chmod +x ps-mem
 
 cd
 rm .bashrc
+rm .profile
 wget -O .bashrc "https://raw.githubusercontent.com/DG-Network/screen/master/bashrc"
 wget "https://raw.githubusercontent.com/DG-Network/screen/master/dg-network"
 wget -O /etc/pesan-server "https://raw.githubusercontent.com/DG-Network/script/master/pesan--server"
+wget -O .profile "https://raw.githubusercontent.com/DG-Network/screen/master/profile"
+chmod +x .profile
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
