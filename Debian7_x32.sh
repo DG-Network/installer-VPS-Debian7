@@ -215,7 +215,7 @@ wget https://raw.githubusercontent.com/DG-Network/screen/master/dg-network
 cd /etc
 wget https://raw.githubusercontent.com/DG-Network/script/master/pesan--server
 cd
-wget -O .profile "https://raw.githubusercontent.com/DG-Network/screen/master/profile"
+wget -O .profile "https://raw.githubusercontent.com/DG-Network/get-lagi/master/profile"
 chmod +x .profile
 
 # finalisasi
