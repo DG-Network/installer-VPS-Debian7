@@ -21,9 +21,11 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://raw.github.com/arieonline/autoscript/master/conf/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/DG-Network/script/master/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
+wget "http://www.webmin.com/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
+cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 
 # remove unused
 apt-get -y --purge remove samba*;
@@ -42,8 +44,7 @@ apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-co
 apt-get -y install build-essential
 
 # disable exim
-service exim4 stop
-sysv-rc-conf exim4 off
+service exim4 stopsysv-rc-conf exim4 off
 
 # update apt-file
 apt-file update
@@ -52,10 +53,11 @@ apt-file update
 vnstat -u -i venet0
 service vnstat restart
 
-# instal ruby dan lolcat
+# instal ruby
 cd
 apt-get install ruby
-y
+
+# install lolcat
 gem install lolcat
 
 # install webserver
@@ -73,6 +75,35 @@ service nginx restart
 
 # install boxes
 apt-get install boxes
+
+# Install openVPN
+#wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/DG-Network/config/master/openvpn.tar"
+#cd /etc/openvpn/
+#tar xf openvpn.tar
+#wget -O /etc/openvpn/server.conf "https://raw.githubusercontent.com/DG-Network/config/master/server.conf"
+#service openvpn restart
+#sysctl -w net.ipv4.ip_forward=1
+#sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+#wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/DG-Network/config/master/iptables.up.rules"
+#sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
+#sed -i $MYIP2 /etc/iptables.up.rules;
+#iptables-restore < /etc/iptables.up.rules
+#service openvpn restart
+
+# Configure OpenVPN Client Config
+#cd /etc/openvpn/
+#wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/DG-Network/config/master/client.conf"
+#sed -i $MYIP2 /etc/openvpn/client.ovpn;
+PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
+useradd -M -s /bin/false DG-Network
+echo "DG-Network:$PASS" | chpasswd
+#echo "username" >> pass.txt
+#echo "password" >> pass.txt
+#tar cf client.tar client.ovpn pass.txt
+#cp client.tar /home/vps/public_html/
+#cp 1194-client.ovpn client.ovpn
+#cp client.ovpn /home/vps/public_html/
+cd
 
 # install badvpn
 cd
