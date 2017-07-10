@@ -56,8 +56,8 @@ service vnstat restart
 # instal ruby
 cd
 apt-get install ruby
+read -e -i y
 
-# install lolcat
 gem install lolcat
 
 # install webserver
