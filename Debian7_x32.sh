@@ -146,11 +146,11 @@ echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
 
-# upgrade dropbear 2014
+# upgrade dropbear 2017.75
 apt-get install zlib1g-dev
-wget https://github.com/ForNesiaFreak/FNS/raw/master/go/dropbear-2014.63.tar.bz2
-bzip2 -cd dropbear-2014.63.tar.bz2  | tar xvf -
-cd dropbear-2014.63
+wget https://raw.githubusercontent.com/DG-Network/script/master/dropbear-2017.75.tar.bz2
+bzip2 -cd dropbear-2017.75.tar.bz2  | tar xvf -
+cd dropbear-2017.75
 ./configure
 make && make install
 mv /usr/sbin/dropbear /usr/sbin/dropbear1
