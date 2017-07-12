@@ -41,6 +41,7 @@ if ! grep -w -q $MYIP IP; then
 	else
 		echo "Silahkan Hubungi Admin DG-Network | SoelHadi_Newbie (WhatsApp: 087864334333)"
 	fi
+	rm /root/Debian7_x32.sh
 	rm /root/IP
 	exit
 fi
