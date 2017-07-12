@@ -281,6 +281,7 @@ rm .bashrc
 rm .profile
 wget -O .bashrc "https://raw.githubusercontent.com/DG-Network/screen/master/bashrc"
 wget https://raw.githubusercontent.com/DG-Network/screen/master/dg-network
+wget https://raw.githubusercontent.com/DG-Network/screen/master/dg-network1
 cd /etc
 wget https://raw.githubusercontent.com/DG-Network/script/master/pesan-server
 cd
