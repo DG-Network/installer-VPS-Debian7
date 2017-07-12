@@ -115,34 +115,6 @@ service nginx restart
 # install boxes
 apt-get install boxes
 
-# Install openVPN
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/DG-Network/config/master/openvpn.tar"
-cd /etc/openvpn/
-tar xf openvpn.tar
-wget -O /etc/openvpn/server.conf "https://raw.githubusercontent.com/DG-Network/config/master/server.conf"
-service openvpn restart
-sysctl -w net.ipv4.ip_forward=1
-sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/DG-Network/config/master/iptables.up.rules"
-sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-sed -i $MYIP2 /etc/iptables.up.rules;
-iptables-restore < /etc/iptables.up.rules
-service openvpn restart
-
-# Configure OpenVPN Client Config
-cd /etc/openvpn/
-wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/DG-Network/config/master/client.conf"
-sed -i $MYIP2 /etc/openvpn/client.ovpn;
-PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false DG-Network
-echo "DG-Network:$PASS" | chpasswd
-echo "username" >> pass.txt
-echo "password" >> pass.txt
-tar cf client.tar client.ovpn pass.txt
-cp client.tar /home/vps/public_html/
-cp client.ovpn /home/vps/public_html/
-cd
-
 # install badvpn
 cd
 wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/arieonline/autoscript/master/conf/badvpn-udpgw"
@@ -309,7 +281,7 @@ rm .profile
 wget -O .bashrc "https://raw.githubusercontent.com/DG-Network/screen/master/bashrc"
 wget https://raw.githubusercontent.com/DG-Network/screen/master/dg-network
 cd /etc
-wget https://raw.githubusercontent.com/DG-Network/script/master/pesan--server
+wget https://raw.githubusercontent.com/DG-Network/script/master/pesan-server
 cd
 wget -O .profile "https://raw.githubusercontent.com/DG-Network/get-lagi/master/profile"
 chmod +x .profile
