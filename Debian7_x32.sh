@@ -252,6 +252,7 @@ wget -O banner "https://raw.githubusercontent.com/DG-Network/script/master/banne
 wget -O benchmark "https://raw.github.com/choirulanam217/script/master/conf/bench-network.sh"
 wget -O speedtest "https://raw.github.com/sivel/speedtest-cli/master/speedtest.py"
 wget -O ps-mem "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
+wget -O user-expire-list "https://raw.githubusercontent.com/DG-Network/script/master/user-expire-list.sh"
 echo "0 */12 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
@@ -275,6 +276,7 @@ chmod +x pesan-server
 chmod +x benchmark
 chmod +x speedtest
 chmod +x ps-mem
+chmod +x user-expire-list
 
 cd
 rm .bashrc
