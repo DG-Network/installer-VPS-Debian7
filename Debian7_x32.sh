@@ -229,6 +229,7 @@ chattr +i /etc/webmin/miniserv.conf
 rm /root/webmin_1.680_all.deb
 service webmin restart
 service vnstat restart
+apt-get -y install libxml-parser-perl
 
 # downlaod script
 cd /usr/bin
