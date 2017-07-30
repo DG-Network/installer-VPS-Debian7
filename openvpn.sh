@@ -106,6 +106,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				rm -rf /usr/share/doc/openvpn*
 				sed -i '/iptables -t nat -A POSTROUTING -s 10.8.0.0/d' $RCLOCAL
 				rm /root/openvpn.sh
+				rm /home/vps/public_html/client.ovpn
 				echo ""
 				echo "          INFO !!!
 				
