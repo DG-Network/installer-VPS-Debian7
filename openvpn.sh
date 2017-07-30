@@ -106,10 +106,14 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				rm -rf /usr/share/doc/openvpn*
 				sed -i '/iptables -t nat -A POSTROUTING -s 10.8.0.0/d' $RCLOCAL
 				echo ""
-				echo "OpenVPN dihapus!"
+				echo "          INFO !!!
+				
+				       OpenVPN dihapus!" | boxes -d capgirl | lolcat
 			else
 				echo ""
-				echo "Penghapusan dibatalkan!"
+				echo "              INFO !!!
+				
+				       Penghapusan dibatalkan!" | boxes -d girl | lolcat
 			fi
 			exit
 			;;
@@ -125,7 +129,7 @@ else
 		lolcat -F 0.3 -S 0 /usr/bin/banner
 	fi
 	
-		echo "                   DEVELOPED BY Rizal Hidayat (fb.com/admin.soned, 081515292117)             "
+		echo "                   DEVELOPED BY SoelHadi_Newbie (WhatsApp: 087864334333)             "
 	echo ""
 	echo ""
 	# OpenVPN setup and first user creation
@@ -385,13 +389,14 @@ END
 		;;
 	esac
 	cp $CLIENT.ovpn /home/vps/public_html/
-	cp $CLIENT.ovpn /root/
+	cp $CLIENT.ovpn /etc/openvpn/
 	cd ~/
 	rm -rf ovpn-$CLIENT
+	clear
 	echo ""
-	echo "Selesai!"
-	echo ""
-	echo "Client Config: http://$IP:81/$CLIENT.ovpn or /root/$CLIENT.ovpn"
+	echo "                                   DONE !!!
+	
+	       Link Download Config OpenVPN => http://$IP:81/$CLIENT.ovpn" | boxes -d girl | lolcat
 fi
 
 cd
