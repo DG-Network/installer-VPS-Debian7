@@ -105,6 +105,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				rm -rf /etc/openvpn
 				rm -rf /usr/share/doc/openvpn*
 				sed -i '/iptables -t nat -A POSTROUTING -s 10.8.0.0/d' $RCLOCAL
+				rm /root/openvpn.sh
 				echo ""
 				echo "          INFO !!!
 				
@@ -117,7 +118,9 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			fi
 			exit
 			;;
-			2) exit;;
+			2)
+			rm /root/openvpn.sh
+			exit;;
 		esac
 	done
 else
