@@ -255,8 +255,8 @@ wget -O speedtest "https://raw.github.com/sivel/speedtest-cli/master/speedtest.p
 wget -O ps-mem "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O user-expire-list "https://raw.githubusercontent.com/DG-Network/script/master/user-expire-list.sh"
 wget -O user-limit "https://raw.githubusercontent.com/DG-Network/script/master/user-limit.sh"
-echo "0 */12 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
+wget -O auto-reboot "https://raw.githubusercontent.com/DG-Network/menu/master/auto-reboot.sh"
+
 chmod +x menu
 chmod +x banned-user
 chmod +x delete-user-expire
@@ -280,6 +280,7 @@ chmod +x speedtest
 chmod +x ps-mem
 chmod +x user-expire-list
 chmod +x user-limit
+chmod +x auto-reboot
 
 cd
 rm .bashrc
