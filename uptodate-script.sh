@@ -16,7 +16,7 @@ MYIP=$(curl -4 icanhazip.com)
 if [ $MYIP = "" ]; then
    MYIP=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1`;
 fi
-MYIP2="s/xxxxxxxxx/$MYIP/g";
+MYIP2="$MYIP";
 
 # go to root
 cd
