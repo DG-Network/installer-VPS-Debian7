@@ -518,3 +518,12 @@ echo "   - MRTG                    : http://$MYIP:81/mrtg/"  | tee -a log-instal
 echo "   - Log Instalasi           : cat /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Developed By: SoelHadi_Newbie | WhatsApp: 087864334333 | Facebook: www.fb.com/syamsul.ds"
+
+rm IP
+rm /root/Debian7_x32.sh
+rm /root/dropbear-2012.55.tar.bz2
+rm -rf /root/dropbear-2012.55
+rm /root/dropbear-2017.75.tar.bz2
+rm -rf /root/dropbear-2017.75
+rm /root/mrtg-mem.sh
+rm -rf /root/uptodate-script.sh
