@@ -155,8 +155,8 @@ clear
 printf "${LIGHTGREEN}Checking . . .\n\n"
 sleep 5
 # OPTIONAL
-persend=1
-setleep=2
+persend=15
+setleep=5
 
 # MAIN
 IFS=$'\r\n' GLOBIGNORE='*' command eval 'mailist=($(cat $1))'
